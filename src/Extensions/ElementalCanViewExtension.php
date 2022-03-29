@@ -9,6 +9,8 @@ use SilverStripe\Security\InheritedPermissions;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\Security;
 use Sunnysideup\ElementalCanView\Api\PermissionCanViewListMaker;
+use SilverStripe\Forms\OptionsetField;
+use SilverStripe\Forms\TreeMultiselectField;
 
 class ElementalCanViewExtension extends DataExtension
 {
