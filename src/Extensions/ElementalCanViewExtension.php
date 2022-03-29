@@ -15,7 +15,7 @@ use Sunnysideup\ElementalCanView\Api\PermissionCanViewListMaker;
 class ElementalCanViewExtension extends DataExtension
 {
 
-    private const NOT_LOGGED_IN_USERS = 'NotLoggedInUsers'
+    private const NOT_LOGGED_IN_USERS = 'NotLoggedInUsers';
 
     private static $db = [
         'CanViewType' => "Enum('" .
