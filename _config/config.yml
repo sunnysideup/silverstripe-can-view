@@ -1,7 +1,7 @@
 ---
-Name: elemental-switch-tabs
+Name: elemental-can-view
 ---
 
 DNADesign\Elemental\Models\BaseElement:
   extensions:
-    - Sunnysideup\ElementalSwitchTabs\Extensions\ElementalSwitchTabsExtension
+    - Sunnysideup\ElementalSwitchTabs\Extensions\ElementalCanView

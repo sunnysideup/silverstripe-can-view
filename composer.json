@@ -1,5 +1,5 @@
 {
-  "name": "sunnysideup/elemental-switch-tabs",
+  "name": "sunnysideup/elemental-can-view",
   "type": "silverstripe-vendormodule",
   "description": "Helps CMS Users navigate through tabs in Elemental CMS Interface by providing clickable links to switch tabs.",
   "keywords": [

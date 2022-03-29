@@ -1,11 +1,11 @@
 # Silverstripe Elemental Switch Tabs module
-[![Build Status](https://travis-ci.org/sunnysideup/silverstripe-elemental-switch-tabs.svg?branch=master)](https://travis-ci.org/sunnysideup/silverstripe-elemental-switch-tabs)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-elemental-switch-tabs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-elemental-switch-tabs/?branch=master)
-[![codecov.io](https://codecov.io/github/sunnysideup/silverstripe-elemental-switch-tabs/coverage.svg?branch=master)](https://codecov.io/github/sunnysideup/silverstripe-elemental-switch-tabs?branch=master)
+[![Build Status](https://travis-ci.org/sunnysideup/silverstripe-elemental-can-view.svg?branch=master)](https://travis-ci.org/sunnysideup/silverstripe-elemental-can-view)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-elemental-can-view/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-elemental-can-view/?branch=master)
+[![codecov.io](https://codecov.io/github/sunnysideup/silverstripe-elemental-can-view/coverage.svg?branch=master)](https://codecov.io/github/sunnysideup/silverstripe-elemental-can-view?branch=master)
 
-[![Latest Stable Version](https://poser.pugx.org/sunnysideup/elemental-switch-tabs/version)](https://packagist.org/packages/sunnysideup/elemental-switch-tabs)
-[![License](https://poser.pugx.org/sunnysideup/elemental-switch-tabs/license)](https://packagist.org/packages/sunnysideup/elemental-switch-tabs)
-[![Monthly Downloads](https://poser.pugx.org/sunnysideup/elemental-switch-tabs/d/monthly)](https://packagist.org/packages/sunnysideup/elemental-switch-tabs)
+[![Latest Stable Version](https://poser.pugx.org/sunnysideup/elemental-can-view/version)](https://packagist.org/packages/sunnysideup/elemental-can-view)
+[![License](https://poser.pugx.org/sunnysideup/elemental-can-view/license)](https://packagist.org/packages/sunnysideup/elemental-can-view)
+[![Monthly Downloads](https://poser.pugx.org/sunnysideup/elemental-can-view/d/monthly)](https://packagist.org/packages/sunnysideup/elemental-can-view)
 
 
 ## Documentation
@@ -14,7 +14,7 @@
 
  * [Developer Docs](docs/en/INDEX.md)
  * [User Guide](docs/en/userguide.md)
- * [API Docs](http://docs.ssmods.com/sunnysideup/elemental-switch-tabs/classes.xhtml)
+ * [API Docs](http://docs.ssmods.com/sunnysideup/elemental-can-view/classes.xhtml)
 
 
 ## Requirements
@@ -35,19 +35,19 @@ See [composer.json](composer.json) for details
 
 
 ```
-composer require sunnysideup/elemental-switch-tabs
+composer require sunnysideup/elemental-can-view
 ```
 
 ### Configuration
 
 
 
-In the `_config` folder you will find the `elemental-switch-tabs.yml.example`
+In the `_config` folder you will find the `elemental-can-view.yml.example`
 file that shows options for the configuration of this module.
 
 We recommend that you:
 
-  1. copy these `elemental-switch-tabs.yml.example` files into your
+  1. copy these `elemental-can-view.yml.example` files into your
 `app/_config` folder (where available - otherwise search for `private static $` in the module to see what can be configured)
   2. remove the .example extension,
   3. delete the lines you do not care about, and
