@@ -14,13 +14,13 @@ use Sunnysideup\ElementalCanView\Api\PermissionCanViewListMaker;
 
 class ElementalCanViewExtension extends DataExtension
 {
-    public $CanViewType;
 
-    public $CanEditType;
+    private const NOT_LOGGED_IN_USERS = 'NotLoggedInUsers'
 
     private static $db = [
         'CanViewType' => "Enum('" .
             InheritedPermissions::ANYONE . ', ' .
+            InheritedPermissions::NOT_LOGGED_IN_USERS . ', ' .
             InheritedPermissions::LOGGED_IN_USERS . ', ' .
             InheritedPermissions::ONLY_THESE_USERS . "', '" .
             InheritedPermissions::ANYONE .
@@ -37,6 +37,7 @@ class ElementalCanViewExtension extends DataExtension
 
     public function canView($member, $content = [])
     {
+        $owner = $this->getOwner();
         if (! $member) {
             $member = Security::getCurrentUser();
         }
@@ -47,20 +48,26 @@ class ElementalCanViewExtension extends DataExtension
         }
 
         // if there is no meaningfull response go back to actual element itself!
-        if (! $this->CanViewType || InheritedPermissions::ANYONE === $this->CanViewType) {
+        if (! $owner->CanViewType || InheritedPermissions::ANYONE === $owner->CanViewType) {
             return null;
         }
 
+        // check for any  NOT logged-in users
+        if (InheritedPermissions::NOT_LOGGED_IN_USERS === $owner->CanViewType) {
+            if ($member && $member->ID) {
+                return false;
+            }
+        }
         // check for any logged-in users
-        if (InheritedPermissions::LOGGED_IN_USERS === $this->CanViewType) {
+        if (InheritedPermissions::LOGGED_IN_USERS === $owner->CanViewType) {
             if (! ($member && $member->ID)) {
                 return false;
             }
         }
 
         // check for specific groups
-        if (InheritedPermissions::ONLY_THESE_USERS === $this->CanViewType) {
-            if (! ($member && $member->inGroups($this->ViewerGroups()))) {
+        if (InheritedPermissions::ONLY_THESE_USERS === $owner->CanViewType) {
+            if (! ($member && $member->inGroups($owner->ViewerGroups()))) {
                 return false;
             }
         }
@@ -71,7 +78,7 @@ class ElementalCanViewExtension extends DataExtension
 
     public function updateCMSFields(FieldList $fields)
     {
-        $owner = $this->owner;
+        $owner = $this->getOwner();
         $viewAllGroupsMap = PermissionCanViewListMaker::get_list();
         $fields->addFieldsToTab(
             'Root.Permissions',
@@ -108,7 +115,7 @@ class ElementalCanViewExtension extends DataExtension
 
         if (! Permission::check('SITETREE_GRANT_ACCESS')) {
             $fields->makeFieldReadonly($viewersOptionsField);
-            if (InheritedPermissions::ONLY_THESE_USERS === $this->CanEditType) {
+            if (InheritedPermissions::ONLY_THESE_USERS === $owner->CanEditType) {
                 $fields->makeFieldReadonly($viewerGroupsField);
             } else {
                 $fields->removeByName('ViewerGroups');
