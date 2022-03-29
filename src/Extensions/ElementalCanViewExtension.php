@@ -8,7 +8,6 @@ use SilverStripe\Forms\FieldList;
 use DNADesign\Elemental\Models\BaseElement;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\ORM\DataExtension;
-use SilverStripe\Security\InheritedPermissionsExtension;
 use SilverStripe\Security\Group;
 use SilverStripe\Security\InheritedPermissions;
 use SilverStripe\Security\InheritedPermissionsExtension;
