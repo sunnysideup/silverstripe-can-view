@@ -3,14 +3,14 @@
 namespace Sunnysideup\ElementalCanView\Extensions;
 
 use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\OptionsetField;
+use SilverStripe\Forms\TreeMultiselectField;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Security\Group;
 use SilverStripe\Security\InheritedPermissions;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\Security;
 use Sunnysideup\ElementalCanView\Api\PermissionCanViewListMaker;
-use SilverStripe\Forms\OptionsetField;
-use SilverStripe\Forms\TreeMultiselectField;
 
 class ElementalCanViewExtension extends DataExtension
 {
