@@ -20,7 +20,7 @@ class ElementalCanViewExtension extends DataExtension
     private static $db = [
         'CanViewType' => "Enum('" .
             InheritedPermissions::ANYONE . ', ' .
-            InheritedPermissions::NOT_LOGGED_IN_USERS . ', ' .
+            self::NOT_LOGGED_IN_USERS . ', ' .
             InheritedPermissions::LOGGED_IN_USERS . ', ' .
             InheritedPermissions::ONLY_THESE_USERS . "', '" .
             InheritedPermissions::ANYONE .
@@ -53,7 +53,7 @@ class ElementalCanViewExtension extends DataExtension
         }
 
         // check for any  NOT logged-in users
-        if (InheritedPermissions::NOT_LOGGED_IN_USERS === $owner->CanViewType) {
+        if (self::NOT_LOGGED_IN_USERS === $owner->CanViewType) {
             if ($member && $member->ID) {
                 return false;
             }
