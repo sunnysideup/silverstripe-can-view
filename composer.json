@@ -6,13 +6,10 @@
     "Silverstripe-CMS",
     "CMS",
     "Silverstripe",
-    "link",
     "elemental",
-    "switch tabs",
-    "tabs",
-    "cms fields",
-    "cms",
-    "fields",
+    "canView",
+    "extendedCan",
+    "permissions",
     "field"
   ],
   "require": {
@@ -31,7 +28,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Sunnysideup\\ElementalSwitchTabs\\": "src/"
+      "Sunnysideup\\ElementalCanView\\": "src/"
     }
   },
   "suggested": {

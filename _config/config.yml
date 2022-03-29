@@ -4,4 +4,4 @@ Name: elemental-can-view
 
 DNADesign\Elemental\Models\BaseElement:
   extensions:
-    - Sunnysideup\ElementalSwitchTabs\Extensions\ElementalCanView
+    - Sunnysideup\ElementalCanView\Extensions\ElementalCanViewExtension
