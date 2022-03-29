@@ -73,12 +73,12 @@ class ElementalCanViewExtension extends DataExtension
     {
         $owner = $this->owner;
         $viewAllGroupsMap = PermissionCanViewListMaker::get_list();
-        $fields->fieldsToTab(
+        $fields->addFieldsToTab(
             'Root.Permissions',
             [
                 $viewersOptionsField = new OptionsetField(
                     'CanViewType',
-                    _t(__CLASS__ . '.ACCESSHEADER', 'Who can view this page?')
+                    _t(__CLASS__ . '.ACCESSHEADER', 'Who can view this elemental block?')
                 ),
                 $viewerGroupsField = TreeMultiselectField::create(
                     'ViewerGroups',
@@ -89,7 +89,7 @@ class ElementalCanViewExtension extends DataExtension
         );
 
         $viewersOptionsSource = [
-            InheritedPermissions::ANYONE => _t(__CLASS__ . '.ACCESSANYONEWITHPAGEACCESS', 'Anyone who can view the page'),
+            InheritedPermissions::ANYONE => _t(__CLASS__ . '.ACCESSANYONEWITHPAGEACCESS', 'Anyone who can view the parent page'),
             InheritedPermissions::LOGGED_IN_USERS => _t(__CLASS__ . '.ACCESSLOGGEDIN', 'Logged-in users'),
             InheritedPermissions::ONLY_THESE_USERS => _t(
                 __CLASS__ . '.ACCESSONLYTHESE',
