@@ -58,6 +58,7 @@ class ElementalCanViewExtension extends DataExtension
                 return false;
             }
         }
+
         // check for any logged-in users
         if (InheritedPermissions::LOGGED_IN_USERS === $owner->CanViewType) {
             if (! ($member && $member->ID)) {
