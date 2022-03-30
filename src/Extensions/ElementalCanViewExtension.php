@@ -81,13 +81,17 @@ class ElementalCanViewExtension extends DataExtension
     {
         $owner = $this->getOwner();
         $viewAllGroupsMap = PermissionCanViewListMaker::get_list();
+        $fields->removeFieldFromTab('Root', 'ViewerGroups');
         $fields->addFieldsToTab(
             'Root.Permissions',
             [
-                $viewersOptionsField = new OptionsetField(
+                $viewersOptionsField = (new OptionsetField(
                     'CanViewType',
                     _t(__CLASS__ . '.ACCESSHEADER', 'Who can view this elemental block?')
-                ),
+                ))
+                    ->setDescription('
+                        As an Administrator,
+                        you can always see ALL blocks - no matter what - otherwise you could not edit them.'),
                 $viewerGroupsField = TreeMultiselectField::create(
                     'ViewerGroups',
                     _t(__CLASS__ . '.VIEWERGROUPS', 'Viewer Groups'),
@@ -98,6 +102,7 @@ class ElementalCanViewExtension extends DataExtension
 
         $viewersOptionsSource = [
             InheritedPermissions::ANYONE => _t(__CLASS__ . '.ACCESSANYONEWITHPAGEACCESS', 'Anyone who can view the parent page'),
+            self::NOT_LOGGED_IN_USERS => _t(__CLASS__ . '.ACCESSNOTLOGGEDIN', 'Logged-out users'),
             InheritedPermissions::LOGGED_IN_USERS => _t(__CLASS__ . '.ACCESSLOGGEDIN', 'Logged-in users'),
             InheritedPermissions::ONLY_THESE_USERS => _t(
                 __CLASS__ . '.ACCESSONLYTHESE',
