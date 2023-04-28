@@ -1,4 +1,4 @@
-# Silverstripe Elemental Switch Tabs module
+# Silverstripe Elemental Can View Helper
 [![Build Status](https://travis-ci.org/sunnysideup/silverstripe-elemental-can-view.svg?branch=master)](https://travis-ci.org/sunnysideup/silverstripe-elemental-can-view)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-elemental-can-view/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-elemental-can-view/?branch=master)
 [![codecov.io](https://codecov.io/github/sunnysideup/silverstripe-elemental-can-view/coverage.svg?branch=master)](https://codecov.io/github/sunnysideup/silverstripe-elemental-can-view?branch=master)
